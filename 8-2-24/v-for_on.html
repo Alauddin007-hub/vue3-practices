@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style>
+        
+        img{
+            height:200px ;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+     <div id="app">
+        <img v-bind:src="dimage">
+        <ul>
+            <li v-for="x in fruitsphoto" v-on:click="dimage = x.url">
+                {{x.name}}
+            </li>
+        </ul>
+        
+     </div>
+
+     <script>
+        const app = Vue.createApp({
+            data(){
+                return{
+                    fruits:["Mango", "Apple", "Orange", "Grape", "Strawberry"],
+                    dimage:"ban.jpeg",
+                    fruitsphoto:[
+                        {name: 'Malta', url: 'a.jpg'},
+                         {name: "Nashpati",url: "b.jpg"},
+                          {name: "Mango",url: "c.jpg"},
+                          {name: "Strawberry",url:"d.jpg"}, 
+                          {name: "Apple", url:"e.jpg"}, 
+                          {name: "Grape", url: "f.jpeg"},
+                          
+                        ]
+                }
+            }
+        })
+
+        app.mount("#app")
+     </script>
+</body>
+</html>

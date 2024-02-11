@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style>
+         #app > div {
+      border: solid rgb(233, 158, 158) 3px;
+      width: 80%;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    figure {
+      width: 200px;
+      padding: 10px;
+      margin: 10px;
+      background-color: lightskyblue;
+      border-radius: 5px;
+    }
+
+    figcaption {
+      text-align: center;
+    }
+        img{
+            height:200px ;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+     <div id="app">
+        <div class="fruits" v-for="x in fruits">
+            <ul>
+                <li>{{x}}</li>
+            </ul>
+        </div>
+        <div>
+            <figure v-for="x in fruitsphoto">
+              <img v-bind:src="x.url">
+              <figcaption>{{ x.name }}</figcaption>
+            </figure>
+          </div>
+     </div>
+
+     <script>
+        const app = Vue.createApp({
+            data(){
+                return{
+                    fruits:["Mango", "Apple", "Orange", "Grape", "Strawberry"],
+                    fruitsphoto:[
+                        {name: 'Malta', url: 'a.jpg'},
+                         {name: "Nashpati",url: "b.jpg"},
+                          {name: "Mango",url: "c.jpg"},
+                          {name: "Strawberry",url:"d.jpg"}, 
+                          {name: "Apple", url:"e.jpg"}, 
+                          {name: "Grape", url: "f.jpeg"},
+                          {name: "Banana", url: "ban.jpeg"}
+                        ]
+                }
+            }
+        })
+
+        app.mount("#app")
+     </script>
+</body>
+</html>

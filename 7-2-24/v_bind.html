@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        {{url}} <br>
+        <img v-bind:src="url" alt="dfd" style="height: 300px;">
+        <div v-bind:style = "{width: '300px', height: '200px', backgroundColor: 'grey', textAlign: 'center',padding: '20px', color: 'crimson'}">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi aliquam perferendis, animi voluptatibus esse ad consequatur nisi, porro repudiandae necessitatibus dolor nulla temporibus optio recusandae possimus distinctio quisquam! Nam, commodi?
+        </div>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return{
+                    url: "flower.jpg"
+                }
+            }
+        });
+
+        app.mount('#app')
+    </script>
+
+
+</body>
+</html>
